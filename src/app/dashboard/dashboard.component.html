@@ -1,0 +1,11 @@
+<h2>Reporte de ventas diarias</h2>
+<div style="display: block; width: 600px;">
+  <canvas
+    baseChart
+    [data]="{
+      labels: chartLabels,
+      datasets: [{ data: chartData, label: 'Total ventas ($)' }]
+    }"
+    [type]="chartType">
+  </canvas>
+</div>

@@ -1,0 +1,15 @@
+/* Estilos generales */
+nav {
+    background: #007bff;
+    padding: 10px;
+    color: white;
+  }
+  a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
