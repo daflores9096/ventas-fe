@@ -1,8 +1,6 @@
-import 'zone.js'; // ✅ Necesario para detección de cambios
-import { bootstrapApplication } from '@angular/platform-browser'; // ✅ Import correcto
-import { AppComponent } from './app/app.component';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
+import { App } from './app/app';
 
-// 🔧 Se añade tipado a 'err' para evitar el warning TS7006
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err: unknown) => console.error(err));
+bootstrapApplication(App, appConfig)
+  .catch((err) => console.error(err));

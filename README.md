@@ -1,6 +1,6 @@
-# Ventas
+# VentasFe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
 
 ## Development server
 
@@ -38,7 +38,11 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 ## Running unit tests
 
+<<<<<<< HEAD
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+=======
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+>>>>>>> c1d30a4 (initial commit)
 
 ```bash
 ng test
