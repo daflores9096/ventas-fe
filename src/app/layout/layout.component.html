@@ -1,4 +1,5 @@
-<div class="flex h-screen bg-gray-100">
+<!-- SOLO si está autenticado -->
+<div *ngIf="auth.isLoggedIn(); else publicView" class="flex h-screen bg-gray-100">
 
   <!-- SIDEBAR -->
   <aside class="w-64 bg-white shadow-md p-6 hidden md:block">
@@ -34,3 +35,8 @@
     </main>
   </div>
 </div>
+
+<!-- VISTA PÚBLICA (login, etc) -->
+<ng-template #publicView>
+  <router-outlet></router-outlet>
+</ng-template>
