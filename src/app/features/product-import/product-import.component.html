@@ -1,0 +1,66 @@
+<div class="import-container">
+  <h2>Importar productos desde Excel</h2>
+
+  <!-- Selector de archivo -->
+  <input
+    type="file"
+    accept=".xlsx,.xls"
+    (change)="onFileSelected($event)"
+    [disabled]="loading"
+  />
+
+  <!-- Loading -->
+  <p *ngIf="loading" class="loading">
+    Importando productos...
+  </p>
+
+  <!-- PREVIEW -->
+  <div
+    *ngIf="showPreview && productsPreview.length > 0 && !loading"
+    class="preview"
+  >
+
+    <h3>Preview de productos ({{ productsPreview.length }})</h3>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let col of REQUIRED_COLUMNS">
+              {{ col }}
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let product of productsPreview; let i = index">
+            <td *ngFor="let col of REQUIRED_COLUMNS">
+              {{ product[col] }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Acciones -->
+    <div class="actions">
+      <button
+        type="button"
+        (click)="confirmImport()"
+        [disabled]="loading"
+        class="btn btn-success"
+      >
+        Confirmar importación
+      </button>
+
+      <button
+        type="button"
+        (click)="cancelImport()"
+        [disabled]="loading"
+        class="btn btn-secondary"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>

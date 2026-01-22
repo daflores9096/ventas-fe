@@ -1,0 +1,36 @@
+<h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+
+<!-- KPIs -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+
+  <div class="bg-white shadow p-4 rounded-xl">
+    <div class="text-gray-600 text-sm">Ventas registradas</div>
+    <div class="text-3xl font-bold">{{ totalSales }}</div>
+  </div>
+
+  <div class="bg-white shadow p-4 rounded-xl">
+    <div class="text-gray-600 text-sm">Ingresos totales</div>
+    <div class="text-3xl font-bold">${{ totalRevenue }}</div>
+  </div>
+
+  <div class="bg-white shadow p-4 rounded-xl">
+    <div class="text-gray-600 text-sm">Productos vendidos</div>
+    <div class="text-3xl font-bold">{{ totalProductsSold }}</div>
+  </div>
+
+</div>
+
+<!-- Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+  <div class="bg-white p-6 shadow rounded-xl">
+    <h2 class="text-xl font-semibold mb-2">Ventas por día</h2>
+    <canvas baseChart [data]="dailyChartData" [type]="'line'"></canvas>
+  </div>
+
+  <div class="bg-white p-6 shadow rounded-xl">
+    <h2 class="text-xl font-semibold mb-2">Ventas por producto</h2>
+    <canvas baseChart [data]="productChartData" [type]="'bar'"></canvas>
+  </div>
+
+</div>

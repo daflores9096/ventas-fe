@@ -1,0 +1,13 @@
+/* Animación opcional */
+.border:hover {
+  transition: 0.2s;
+}
+
+.flash {
+  animation: flash-bg 0.3s ease;
+}
+
+@keyframes flash-bg {
+  from { background-color: #bbf7d0; }
+  to { background-color: transparent; }
+}

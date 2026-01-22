@@ -1,0 +1,36 @@
+<div class="flex h-screen bg-gray-100">
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 bg-white shadow-md p-6 hidden md:block">
+    <h2 class="text-xl font-bold mb-8">Ventas App</h2>
+
+    <nav class="space-y-4">
+      <a routerLink="/dashboard" routerLinkActive="font-bold underline" class="block p-2 rounded hover:bg-gray-200">Dashboard</a>
+      <a routerLink="/products" routerLinkActive="font-bold underline" class="block p-2 rounded hover:bg-gray-200">Productos</a>
+      <a routerLink="/sales" routerLinkActive="font-bold underline" class="block p-2 rounded hover:bg-gray-200">Ventas</a>
+      <a routerLink="/sales-history" routerLinkActive="font-bold underline" class="block p-2 rounded hover:bg-gray-200">Mis Ventas</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="flex-1 flex flex-col">
+
+    <!-- NAVBAR -->
+    <header class="bg-white shadow p-4 flex justify-between items-center">
+      <span class="font-semibold">
+        Bienvenido: {{ auth.getUser()?.username }}
+      </span>
+
+      <button
+        (click)="logout()"
+        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+        Cerrar Sesión
+      </button>
+    </header>
+
+    <!-- MAIN VIEW -->
+    <main class="p-6 overflow-auto">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
